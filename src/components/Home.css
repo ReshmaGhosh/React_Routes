@@ -1,0 +1,6 @@
+.home {
+  text-align: left;
+  background-image: url(../image/sea.jpeg);
+  height: 800px;
+  background-size: cover;
+}
