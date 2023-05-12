@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
-const url = "https://fakestoreapi.com/products/1";
+import { useParams } from "react-router-dom";
 
 export default function ProductDetail() {
   const [ProductDetail, setProductDetail] = useState({});
+  const result1 = useParams();
+  console.log(result1, "result");
+
+  const url = `https://fakestoreapi.com/products/${result1.id}`;
 
   async function fetchProduct() {
     const response = await fetch(url);
@@ -17,6 +21,13 @@ export default function ProductDetail() {
     <div>
       ProductDetail
       <div>{ProductDetail.title}</div>
+      <div>{ProductDetail.price}</div>
+      <div>{ProductDetail.description}</div>
+      <div>{ProductDetail.category}</div>
+      <div>
+        <img src={ProductDetail.image}></img>
+      </div>
+      {/* <div>Rate :{ProductDetail.rating}</div> */}
     </div>
   );
 }
