@@ -17,26 +17,16 @@ export default function Product() {
     getData();
   }, []);
 
-  // useEffect(() => {
-  //   const getProductData = async () => {
-  //     const response = await fetch(url);
-  //     const productData = await response.json();
-  //     setProducts(productData);
-  //   };
-  //   getProductData();
-  // }, []);
-
   console.log(products, "products");
 
   return (
-    <div>
-      Product
+    <div className="Product">
       {products.map((product) => (
         <div key={product.id}>
-          <h1>{product.title}</h1>
-          <p>{product.price}</p>
+          <h1>Title : {product.title}</h1>
+          <p>Price: {product.price}</p>
           <Link to={`/product/${product.id}`}>
-            <button>Go to the detail</button>
+            <button className="btn">Go to the detail</button>
           </Link>
         </div>
       ))}

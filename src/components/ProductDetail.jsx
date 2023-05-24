@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
+import "./Product.css";
+
 export default function ProductDetail() {
   const [ProductDetail, setProductDetail] = useState({});
   const result1 = useParams();
@@ -20,14 +22,13 @@ export default function ProductDetail() {
   return (
     <div>
       ProductDetail
-      <div>{ProductDetail.title}</div>
-      <div>{ProductDetail.price}</div>
-      <div>{ProductDetail.description}</div>
-      <div>{ProductDetail.category}</div>
+      <div>Title: {ProductDetail.title}</div>
+      <div>Price: {ProductDetail.price}</div>
+      <div>Description: {ProductDetail.description}</div>
+      <div>Category: {ProductDetail.category}</div>
       <div>
-        <img src={ProductDetail.image}></img>
+        <img src={ProductDetail.image} width={200}></img>
       </div>
-      {/* <div>Rate :{ProductDetail.rating}</div> */}
     </div>
   );
 }
